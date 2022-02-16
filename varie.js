@@ -36,9 +36,7 @@ function incrementString(string) {
         numberFoundString = searchResult[0];
     }
     const numberInt = parseInt(numberFoundString);
-    if (numberInt !== null) {
-        return string.substring(0, string.length - numberFoundString.length) + (numberInt + 1);
-    }
+    return string.substring(0, string.length - numberFoundString.length) + (numberInt + 1);
 }
 
 console.log("Mi aspetto 'montagna89' con <montagna88>, ho ottenuto: ", incrementString("montagna88"));
