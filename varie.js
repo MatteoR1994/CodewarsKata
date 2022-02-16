@@ -29,14 +29,13 @@ function getMiddle2(string) {
 function incrementString(string) {
     const regex = RegExp(/\d+$/); // Controllo la presenza di più cifre alla fine della stringa.
     let searchResult = regex.exec(string); // Ritorno il primo elemento dell'array, che conterrà il numero trovato (come stringa).
-    let numberFoundString;
     if (searchResult === null) {
         return string + "1";
     } else {
-        numberFoundString = searchResult[0];
+        let numberFoundString = searchResult[0];
+        const numberInt = parseInt(numberFoundString);
+        return string.substring(0, string.length - numberFoundString.length) + (numberInt + 1);
     }
-    const numberInt = parseInt(numberFoundString);
-    return string.substring(0, string.length - numberFoundString.length) + (numberInt + 1);
 }
 
 console.log("Mi aspetto 'montagna89' con <montagna88>, ho ottenuto: ", incrementString("montagna88"));
