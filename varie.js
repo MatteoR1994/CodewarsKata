@@ -78,3 +78,19 @@ const vowels2 = string.match(regex);
 
 console.log(vowels[0]);
 console.log(vowels2);
+
+/* ---------------------------------------------------------------------------------------------- */
+
+/**** 5) Sequences and Series (https://www.codewars.com/kata/5254bd1357d59fbbe90001ec) ****/
+
+function getScore(n) {
+    let score = 0;
+    let molt = 50;
+    for (let i = 1; i <= n; i++) {
+        score = i * molt;
+        molt += 25;        
+    }
+    return score;
+}
+
+console.log(getScore(10000));
