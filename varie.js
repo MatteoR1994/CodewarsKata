@@ -38,6 +38,43 @@ function incrementString(string) {
     }
 }
 
-console.log("Mi aspetto 'montagna89' con <montagna88>, ho ottenuto: ", incrementString("montagna88"));
-console.log("Mi aspetto 'montagna1' con <montagna>, ho ottenuto: ", incrementString("montagna"));
-console.log("Mi aspetto '55montagna1' con <55montagna>, ho ottenuto: ", incrementString("55montagna"));
+// console.log("Mi aspetto 'montagna89' con <montagna88>, ho ottenuto: ", incrementString("montagna88"));
+// console.log("Mi aspetto 'montagna1' con <montagna>, ho ottenuto: ", incrementString("montagna"));
+// console.log("Mi aspetto '55montagna1' con <55montagna>, ho ottenuto: ", incrementString("55montagna"));
+
+/* ---------------------------------------------------------------------------------------------- */
+
+/**** 3) Esercizio numeri primi Nicolò. ****/
+
+function primeTo(number) {
+    const primeNumbers = [2];
+    for (let i = 3; i <= number; i++) {
+        let numberToCheck = i;
+        let isPrime = true;
+        for (const prime of primeNumbers) {
+            if (numberToCheck % prime === 0) {
+                isPrime = false;
+                break;
+            }
+        }
+        if (isPrime) {
+            primeNumbers.push(numberToCheck);
+        }
+    }
+    return primeNumbers;
+}
+
+// console.log(primeTo(20));
+
+/* ---------------------------------------------------------------------------------------------- */
+
+/**** 4) Vowel Count (https://www.codewars.com/kata/54ff3102c1bad923760001f3) ****/
+
+const regex = RegExp(/[aeiou]/g);
+const vowels = regex.exec("ciao coome va");
+
+const string = "ciao coome vaei";
+const vowels2 = string.match(regex);
+
+console.log(vowels[0]);
+console.log(vowels2);
